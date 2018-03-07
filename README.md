@@ -14,7 +14,7 @@ For easy replication, this repository comes with an Vagrant file setting up the
 experiments. A simple `vagrant up` after cloning this repository should be enough
 to create a working environment. However, as automated build-scripts tend to break
 every once in a while, we also provide a pre-built vagrant box, which can be obtained
-by `vagrant init avatar2/bar18_avatar2`. In this case, it is mandatory to
+by `vagrant init avatar2/ndss18_wycinwyc`. In this case, it is mandatory to
 adjust the generated Vagrant file to forward the USB devices to the guest, as done in the
 [Vagrantfile](Vagrantfile#L61) in this repository.
 
