@@ -1,7 +1,7 @@
 # ndss18_wycinwyc 
 
 This repository contains the code for fuzzing experiments described in the paper 
-"What You Corrupt is not what you crash: Challenges in Fuzzing Embedded Devices" [1],
+"What You Corrupt Is Not What You Crash: Challenges in Fuzzing Embedded Devices" [1],
 which is available [here](http://www.s3.eurecom.fr/docs/ndss18_muench.pdf).
 
 In a nutshell, [boofuzz](https://github.com/jtpereyda/boofuzz) is used to fuzz firmware of
@@ -16,7 +16,7 @@ to create a working environment. However, as automated build-scripts tend to bre
 every once in a while, we also provide a pre-built vagrant box, which can be obtained
 by `vagrant init avatar2/ndss18_wycinwyc`. In this case, it is mandatory to
 adjust the generated Vagrant file to forward the USB devices to the guest, as done in the
-[Vagrantfile](Vagrantfile#L61) in this repository.
+[Vagrantfile](Vagrantfile#L61-L79) in this repository.
 
 ## Hardware requirements
 The fuzzed target is an STM32 Nucleo-L152RE board. This Target is connected to
