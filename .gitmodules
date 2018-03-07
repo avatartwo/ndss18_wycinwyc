@@ -1,0 +1,7 @@
+[submodule "panda_modifications/avatar-panda"]
+	path = panda_modifications/avatar-panda
+	url = https://github.com/avatartwo/avatar-panda
+	branch = master
+[submodule "experiments/deps/ykush"]
+	path = experiments/deps/ykush
+	url = https://github.com/Yepkit/ykush.git
