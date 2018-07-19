@@ -128,7 +128,7 @@ def start_avatar(ava, mode, binary, elf_file=None, output_dir=None,
     mmio2= avatar.add_memory_range(0x40005000, 0x1000000-0x5000, 'mmio2', 
                                    permissions='rw-') 
     serial2 = avatar.add_memory_range(0x40004400, 0x100, 'usart2', 
-                                     persmissions='rw-') 
+                                     permissions='rw-') 
 
     rom  = avatar.add_memory_range(0x08000000, 0x1000000, 'rom', 
                                    file=abspath(binary), permissions='r-x')
