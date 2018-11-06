@@ -7,7 +7,8 @@ sudo ./install.sh
 cd ../../
 
 # 2) fetch and install python dependencies
-sudo pip2 install boofuzz
+sudo pip2 install cement==2.10.2
+sudo pip2 install boofuzz==0.1.0
 sudo pip2 install numpy
 sudo pip2 install pyelftools
 sudo pip2 install tabulate
@@ -30,5 +31,5 @@ EOF
 
 sudo udevadm control --reload-rules
 
-# 4.5) We need to be in the group dialout to access /dev/ttyUSB0
+## 4.5) We need to be in the group dialout to access /dev/ttyUSB0
 sudo adduser $USER dialout
