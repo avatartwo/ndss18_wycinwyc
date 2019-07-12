@@ -208,6 +208,8 @@ bool init_plugin(void *self){
     }
 
     if (heapobject_tracking){
+        panda_enable_memcb();
+
         malloc_addr = panda_parse_ulong_opt(args, "malloc", 0, "Address of malloc-function (required for heapobject_tracking");
         realloc_addr = panda_parse_ulong_opt(args, "realloc", 0, "Address of realloc-function (required for heapobject_tracking");
         free_addr = panda_parse_ulong_opt(args, "free", 0, "Address of calloc-function (required for heapobject_tracking");
