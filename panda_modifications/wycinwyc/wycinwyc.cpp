@@ -171,6 +171,9 @@ bool init_plugin(void *self){
     panda_enable_precise_pc();
     panda_disable_tb_chaining();
 
+    if (callstack_tracking | heapobject_tracking | segment_tracking | stackobject_tracking) {   
+        panda_enable_memcb();
+    }
 
     if (callstack_tracking | callframe_tracking | stackobject_tracking){
         enable_capstone_invocation(self, pcb);
@@ -221,11 +224,7 @@ bool init_plugin(void *self){
     }
 
     if (segment_tracking){
-        panda_enable_memcb();
-        printf("segment");
-
         enable_segment_tracking(self, pcb);
-
 
         //pcb.insn_translate = translate_segment_cb;
         //panda_register_callback(self, PANDA_CB_INSN_TRANSLATE, pcb);
@@ -233,25 +232,16 @@ bool init_plugin(void *self){
         //pcb.insn_exec = insn_exec_segment_cb;
         //panda_register_callback(self, PANDA_CB_INSN_EXEC, pcb);
         printf("Segment Tracking loaded!\n");
-
-
     }
 
 
     if(stackobject_tracking){
-        panda_enable_memcb();
-        
         const char *debug_symbol_file = panda_parse_string_opt(args, "debugfile", "funcs.json", "File with jsonized debug_symbols");
-
-
 
         enable_stackobject_tracking(self, pcb, debug_symbol_file);
         printf("Stackobject Tracking loaded!\n");
     }
 
-
-
-    
     panda_free_args(args);
     printf("Initialized! :)\n");
     return true;
