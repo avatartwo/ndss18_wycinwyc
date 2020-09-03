@@ -8,10 +8,10 @@ cd ../../
 
 # 2) fetch and install python dependencies
 sudo pip2 install cement==2.10.2
-sudo pip2 install boofuzz==0.1.0
-sudo pip2 install numpy
-sudo pip2 install pyelftools
-sudo pip2 install tabulate
+sudo pip2 install boofuzz==0.0.11
+sudo pip2 install numpy==1.14.1
+sudo pip2 install pyelftools==0.24
+sudo pip2 install tabulate==0.8.2
 
 # 3) generate funcs.json from the debug symbols contained in expat_panda.elf
 python2 ./scripts/debug_symbols.py ./binaries/expat_panda.elf
